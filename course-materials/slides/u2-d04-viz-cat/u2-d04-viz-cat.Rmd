@@ -157,3 +157,11 @@ ggplot(loans, aes(x = loan_amount, y = grade, fill = grade, color = grade)) +
 ```
 
 ---
+
+## My favorite ggridges plot
+
+.pull-left[
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/fn_exp.svg")
+```
+]
