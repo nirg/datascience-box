@@ -173,7 +173,7 @@ class: middle
 # bookings in City Hotels
 hotels %>%
   filter(hotel == "City Hotel") #<<
-````
+```
 ]
 
 ---
@@ -219,16 +219,16 @@ operator    | definition                   || operator     | definition
 `!=`        |	not equal to                 ||`!x`          | not `x`
 `x & y`     | `x` AND `y`                  ||              |
 
----
+<!-- --- -->
 
-.your-turn[
-### Your turn!
+<!-- .your-turn[ -->
+<!-- ### Your turn! -->
 
-Time to actually play around with the Hotels dataset!
+<!-- Time to actually play around with the Hotels dataset! -->
 
-- Go to RStudio Cloud and start `AE 04 - Hotels + Data wrangling`.
-- Open the R Markdown document and complete Exercises 1 - 4.
-]
+<!-- - Go to RStudio Cloud and start `AE 04 - Hotels + Data wrangling`. -->
+<!-- - Open the R Markdown document and complete Exercises 1 - 4. -->
+<!-- ] -->
 
 ---
 
@@ -336,14 +336,14 @@ hotels %>%
 ]
 ]
 
----
+<!-- --- -->
 
-.your-turn[
-### Your turn!
+<!-- .your-turn[ -->
+<!-- ### Your turn! -->
 
-- Go back to RStudio Cloud and continue `AE 04 - Hotels + Data wrangling`.
-- Open the R Markdown document and complete Exercises 5 and 6.
-]
+<!-- - Go back to RStudio Cloud and continue `AE 04 - Hotels + Data wrangling`. -->
+<!-- - Open the R Markdown document and complete Exercises 5 and 6. -->
+<!-- ] -->
 
 ---
 
@@ -504,13 +504,13 @@ hotels %>%
     )
 ```
 
----
+<!-- --- -->
 
-.your-turn[
-### Your turn!
+<!-- .your-turn[ -->
+<!-- ### Your turn! -->
 
-Time to actually play around with the Hotels dataset!
+<!-- Time to actually play around with the Hotels dataset! -->
 
-- Go to RStudio Cloud and start `AE 04 - Hotels + Data wrangling`.
-- Open the R Markdown document and complete Exercises 7 and 8.
-]
+<!-- - Go to RStudio Cloud and start `AE 04 - Hotels + Data wrangling`. -->
+<!-- - Open the R Markdown document and complete Exercises 7 and 8. -->
+<!-- ] -->
