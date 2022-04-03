@@ -47,8 +47,8 @@ slides <- dir_info(recurse = 3, glob = "course-materials/*.Rmd") %>%
     title = map_chr(path, 
           function (path) rmarkdown::yaml_front_matter(path)$title),
     links = map(path, ~ htmltools::tagList(
-          htmltools::a(href = paste0("/", path_ext_set(.x, "html")), "html"),
-          htmltools::a(href = paste0("/", path_ext_set(.x, "pdf")), "pdf"),
+          htmltools::a(href = path_ext_set(.x, "html"), "html"),
+          htmltools::a(href = path_ext_set(.x, "pdf"), "pdf"),
           )),
     links = map(links, ~ gt::html(as.character(.x)))) %>%
     select(path, title, links) 
@@ -75,6 +75,28 @@ filter_units <- function(df, wk, units) {
 }
 ```
 
+```{r build_pdf, echo=FALSE, eval=FALSE}
+library(xaringanBuilder)
+for (d in w3) {
+  build_pdf(paste0("course-materials/slides/",d,"/",d,".Rmd"), complex_slides = TRUE)
+}
+
+w_units <- c("u2-d05-tidy-data", "u2-d06-grammar-wrangle", "u2-d07-single-df",
+        "u2-d08-multi-df", "u2-d09-tidying")
+# build HTML + PDF
+slides %>% 
+  filter_units("3", w_units) %>%
+  pull(path) %>%
+  map(build_pdf, complex_slides = T)
+
+# copy PDFs
+slides %>% 
+  filter_units("3", w_units) %>%
+  pull(path) %>%
+  map(path_ext_set, ext="pdf") %>%
+  map(file_copy, new_path = "~/Downloads", overwrite = T)
+```
+
 ```{r w1, echo=FALSE}
 w1 <- c("u1-d01-welcome", "u1-d02-toolkit-r", "u1-d03-toolkit-git")
 w2 <- c("u2-d01-data-viz", "u2-d02-ggplot2", "u2-d03-viz-num", 
@@ -86,11 +108,4 @@ bind_rows(
   slides %>% filter_units("2", w2),
   slides %>% filter_units("3", w3)
 ) %>% fmt_table()
-```
-
-```{r build_pdf, echo=FALSE, eval=FALSE}
-library(xaringanBuilder)
-for (d in w3) {
-  build_pdf(paste0("course-materials/slides/",d,"/",d,".Rmd"), complex_slides = TRUE)
-}
 ```
