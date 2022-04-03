@@ -62,6 +62,8 @@ fmt_table <- function(df) {
                title = md("**Title**"),
                links = md("**Links**")) %>%
     cols_align(align = "left") %>%
+    cols_align(align = "center", columns = 1) %>%
+    cols_width(title ~ pct(80)) %>%
     tab_options(table.align='left')
 }
 
@@ -74,13 +76,21 @@ filter_units <- function(df, wk, units) {
 ```
 
 ```{r w1, echo=FALSE}
+w1 <- c("u1-d01-welcome", "u1-d02-toolkit-r", "u1-d03-toolkit-git")
+w2 <- c("u2-d01-data-viz", "u2-d02-ggplot2", "u2-d03-viz-num", 
+        "u2-d04-viz-cat", "u2-d14-effective-dataviz")
+w3 <- c("u2-d05-tidy-data", "u2-d06-grammar-wrangle", "u2-d07-single-df",
+        "u2-d08-multi-df", "u2-d09-tidying")
 bind_rows(
-  slides %>% filter_units("1", 
-      c("u1-d01-welcome", "u1-d02-toolkit-r", "u1-d03-toolkit-git") ),
-  slides %>% filter_units("2", 
-      c("u2-d01-data-viz", "u2-d02-ggplot2", "u2-d03-viz-num")),
-  slides %>% filter_units("3", 
-      c("u2-d05-tidy-data", "u2-d06-grammar-wrangle", "u2-d07-single-df",
-        "u2-d08-multi-df", "u2-d09-tidying"))
+  slides %>% filter_units("1", w1),
+  slides %>% filter_units("2", w2),
+  slides %>% filter_units("3", w3)
 ) %>% fmt_table()
+```
+
+```{r build_pdf, echo=FALSE, eval=FALSE}
+library(xaringanBuilder)
+for (d in w3) {
+  build_pdf(paste0("course-materials/slides/",d,"/",d,".Rmd"), complex_slides = TRUE)
+}
 ```
