@@ -3,7 +3,8 @@
 .Rproj.user
 _book
 _bookdown_files
-*.rds
 *.key
+*.rds
 *.docx
 .Rapp.history
+**/*_cache/**
