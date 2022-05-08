@@ -81,16 +81,16 @@ library(xaringanBuilder)
 #   build_pdf(paste0("course-materials/slides/",d,"/",d,".Rmd"), complex_slides = TRUE)
 # }
 
-w_units <- c("u3-d01-misrepresentation", "u3-d02-privacy", "u3-d03-algorithmic-bias")
+w_units <- c("u2-d18-web-scrape", "u2-d20-considerations")
 # build HTML + PDF
 slides %>% 
-  filter_units("6", w_units) %>%
+  filter_units("7", w_units) %>%
   pull(path) %>%
   walk(build_pdf, complex_slides = T)
 
 # copy PDFs
 slides %>% 
-  filter_units("6", w_units) %>%
+  filter_units("7", w_units) %>%
   pull(path) %>%
   map(path_ext_set, ext="pdf") %>%
   map(file_copy, new_path = "~/Downloads", overwrite = T)
@@ -105,12 +105,14 @@ w3 <- c("u2-d05-tidy-data", "u2-d06-grammar-wrangle", "u2-d07-single-df",
 w4 <- c("u2-d21-functions", "u2-d22-iteration")
 w5 <- c("u2-d15-studies-confounding", "u2-d16-simpsons-paradox", "u2-d17-doing-data-science")
 w6 <- c("u3-d01-misrepresentation", "u3-d02-privacy", "u3-d03-algorithmic-bias")
+w7 <- c("u2-d18-web-scrape", "u2-d20-considerations")
 bind_rows(
   slides %>% filter_units("1", w1),
   slides %>% filter_units("2", w2),
   slides %>% filter_units("3", w3),
   slides %>% filter_units("4", w4),
   slides %>% filter_units("5", w5),
-  slides %>% filter_units("6", w6)
+  slides %>% filter_units("6", w6),
+  slides %>% filter_units("7", w7)
 ) %>% fmt_table()
 ```
