@@ -189,7 +189,11 @@ If you want to estimate a population parameter, do you prefer to report a range 
 ---
 
 .center[
-<iframe width="1100" height="500" src="https://news.gallup.com/poll/323480/britons-approval-leadership-new-low.aspx" frameborder="0" style="background:white;"></iframe>  
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/gallop_poll.png")
+```
+ 
 ]
 
 .footnote[
