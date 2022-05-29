@@ -30,7 +30,7 @@ layout: true
   
 &lt;div class="my-footer"&gt;
 &lt;span&gt;
-&lt;a href="https://introds.org" target="_blank"&gt;introds.org&lt;/a&gt;
+&lt;a href="https://datasciencebox.org" target="_blank"&gt;datasciencebox.org&lt;/a&gt;
 &lt;/span&gt;
 &lt;/div&gt; 
 
@@ -74,7 +74,7 @@ organ_donor %&gt;%
 ```
 
 ```
-## # A tibble: 2 x 2
+## # A tibble: 2 × 2
 ##   outcome             n
 ##   &lt;chr&gt;           &lt;int&gt;
 ## 1 complication        3
@@ -264,7 +264,9 @@ null_dist &lt;- organ_donor %&gt;%
 
 
 ```
-## # A tibble: 100 x 2
+## Response: outcome (factor)
+## Null Hypothesis: point
+## # A tibble: 100 × 2
 ##   replicate  stat
 ##       &lt;dbl&gt; &lt;dbl&gt;
 ## 1         1 0.161
@@ -319,7 +321,7 @@ null_dist %&gt;%
 ```
 
 ```
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   p_value
 ##     &lt;dbl&gt;
 ## 1    0.12
@@ -393,7 +395,7 @@ null_dist %&gt;%
 ```
 
 ```
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   p_value
 ##     &lt;dbl&gt;
 ## 1   0.124
@@ -470,7 +472,7 @@ yawn %&gt;%
 ```
 
 ```
-## # A tibble: 4 x 3
+## # A tibble: 4 × 3
 ##   group result       n
 ##   &lt;fct&gt; &lt;fct&gt;    &lt;int&gt;
 ## 1 ctrl  not yawn    12
@@ -493,7 +495,7 @@ yawn %&gt;%
 ```
 
 ```
-## # A tibble: 4 x 4
+## # A tibble: 4 × 4
 ## # Groups:   group [2]
 ##   group result       n p_hat
 ##   &lt;fct&gt; &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt;
@@ -519,7 +521,7 @@ Based on the proportions we calculated, do you think yawning is really contagiou
 
 
 ```
-## # A tibble: 4 x 4
+## # A tibble: 4 × 4
 ## # Groups:   group [2]
 ##   group result       n p_hat
 ##   &lt;fct&gt; &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt;
@@ -760,7 +762,7 @@ null_dist %&gt;%
 ```
 
 ```
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   p_value
 ##     &lt;dbl&gt;
 ## 1    0.53
