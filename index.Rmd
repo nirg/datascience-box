@@ -81,9 +81,9 @@ library(xaringanBuilder)
 #   build_pdf(paste0("course-materials/slides/",d,"/",d,".Rmd"), complex_slides = TRUE)
 # }
 
-w_num <- "10"
-w_units <- c("u4-d09-cross-validation", "u4-d10-quantify-uncertainty",
-        "u4-d11-bootstrap", "u4-d12-hypothesis-testing")
+w_num <- "11"
+w_units <- c("u5-d01-text-analysis", "u5-d02-comparing-texts",
+        "u5-d04-machine-learning")
 # build HTML + PDF
 slides %>% 
   filter_units(w_num, w_units) %>%
@@ -115,6 +115,8 @@ w9 <- c("u4-d06-logistic-reg", "u4-d07-prediction-overfitting",
         "u4-d08-feature-engineering")
 w10 <- c("u4-d09-cross-validation", "u4-d10-quantify-uncertainty",
         "u4-d11-bootstrap", "u4-d12-hypothesis-testing")
+w11 <- c("u5-d01-text-analysis", "u5-d02-comparing-texts",
+        "u5-d04-machine-learning")
 bind_rows(
   slides %>% filter_units("1", w1),
   slides %>% filter_units("2", w2),
@@ -125,6 +127,7 @@ bind_rows(
   slides %>% filter_units("7", w7),
   slides %>% filter_units("8", w8),
   slides %>% filter_units("9", w9),
-  slides %>% filter_units("10", w10)
+  slides %>% filter_units("10", w10),
+  slides %>% filter_units("11", w11)
 ) %>% fmt_table()
 ```
