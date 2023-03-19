@@ -1,7 +1,7 @@
 ---
 title: "SISE2601 Schedule"
 author: "Nir Grinberg"
-date: "4/3/2022"
+date: "19/3/2023"
 output: html_document
 #rmarkdown::render("index.Rmd", "html_document")
 ---
@@ -104,18 +104,17 @@ w2 <- c("u2-d01-data-viz", "u2-d02-ggplot2", "u2-d03-viz-num",
         "u2-d04-viz-cat", "u2-d14-effective-dataviz")
 w3 <- c("u2-d05-tidy-data", "u2-d06-grammar-wrangle", "u2-d07-single-df",
         "u2-d08-multi-df", "u2-d09-tidying")
-w4 <- c("u2-d21-functions", "u2-d22-iteration")
-w5 <- c("u2-d15-studies-confounding", "u2-d16-simpsons-paradox", "u2-d17-doing-data-science")
-w6 <- c("u3-d01-misrepresentation", "u3-d02-privacy", "u3-d03-algorithmic-bias")
-w7 <- c("u2-d18-web-scrape", "u2-d19-top-250-imdb", "u2-d20-considerations")
-w8 <- c("u4-d01-language-of-models", "u4-d02-fitting-interpreting-models",
+w4 <- c("u4-d01-language-of-models", "u4-d02-fitting-interpreting-models",
         "u4-d03-modeling-nonlinear-relationships", "u4-d04-model-multiple-predictors",
         "u4-d05-more-model-multiple-predictors")
-w9 <- c("u4-d06-logistic-reg", "u4-d07-prediction-overfitting",
+w5 <- c("u4-d06-logistic-reg", "u4-d07-prediction-overfitting",
         "u4-d08-feature-engineering")
-w10 <- c("u4-d09-cross-validation", "u4-d10-quantify-uncertainty",
+w6 <- c("u2-d15-studies-confounding", "u2-d16-simpsons-paradox", "u2-d17-doing-data-science")
+w7 <- c("u2-d21-functions", "u2-d22-iteration", "u2-d18-web-scrape", "u2-d19-top-250-imdb", "u2-d20-considerations")
+w8 <- c("u4-d09-cross-validation", "u4-d10-quantify-uncertainty",
         "u4-d11-bootstrap", "u4-d12-hypothesis-testing")
-w11 <- c("u5-d01-text-analysis", "u5-d02-comparing-texts",
+w9 <- c("u3-d01-misrepresentation", "u3-d02-privacy", "u3-d03-algorithmic-bias")
+w10 <- c("u5-d01-text-analysis", "u5-d02-comparing-texts",
         "u5-d04-machine-learning")
 bind_rows(
   slides %>% filter_units("1", w1),
@@ -127,7 +126,6 @@ bind_rows(
   slides %>% filter_units("7", w7),
   slides %>% filter_units("8", w8),
   slides %>% filter_units("9", w9),
-  slides %>% filter_units("10", w10),
-  slides %>% filter_units("11", w11)
+  slides %>% filter_units("10", w10)
 ) %>% fmt_table()
 ```
